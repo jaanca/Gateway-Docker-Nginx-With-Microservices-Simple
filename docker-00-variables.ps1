@@ -1,0 +1,2 @@
+$dockerNetworkWithDNSCommon="gatewaynet"
+$dockerPortExposeInternalContainer=80
