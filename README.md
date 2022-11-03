@@ -7,6 +7,8 @@
 # Descripción de los archivos
     .
     |-- docs/                                        # Documentations
+    |   |-- photos/                                  # Screenshots for running system
+    |   |-- Software-Architecture/                    # Context Diagram from solution
     |-- ms_auth/                                     # Microservice
     |   |-- Dockerfile                               # Instructions to build container
     |   |-- index.html                               # Simple web page
@@ -33,6 +35,9 @@
 System Operative: Windows 10 x64
 Install Docker Desktop + WSL2
 ```
+
+# Context Diagram
+![Alt text](/docs/SoftwareArchitecture/Context Diagram.png?raw=true)
 
 # Create Virtual Network for Docker
 ![Alt text](/docs/photos/01.Create-Network/Screenshot_1.png?raw=true)
