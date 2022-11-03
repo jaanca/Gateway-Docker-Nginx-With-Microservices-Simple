@@ -8,7 +8,7 @@
     .
     |-- docs/                                        # Documentations
     |   |-- photos/                                  # Screenshots for running system
-    |   |-- Software-Architecture/                    # Context Diagram from solution
+    |   |-- Software-Architecture/                   # Context Diagram from solution
     |-- ms_auth/                                     # Microservice
     |   |-- Dockerfile                               # Instructions to build container
     |   |-- index.html                               # Simple web page
