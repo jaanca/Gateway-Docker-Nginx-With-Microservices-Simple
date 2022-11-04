@@ -37,7 +37,7 @@ Install Docker Desktop + WSL2
 ```
 
 # Context Diagram
-![Alt text](/docs/Software-Architecture/Context_Diagram.png?raw=true)
+![Alt text](/docs/Software-Architecture/Context_and_infrastructure_Diagram.png?raw=true)
 
 # Create Virtual Network for Docker
 ![Alt text](/docs/photos/01.Create-Network/Screenshot_1.png?raw=true)

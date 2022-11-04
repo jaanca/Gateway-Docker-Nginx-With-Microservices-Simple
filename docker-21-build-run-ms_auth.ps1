@@ -8,7 +8,7 @@
 # Local variables
 $containername="ms_auth"
 $imagename=$containername+":latest"
-$dockerPortExposetoHost=8001
+$containerPortExposetoHost=8001
 $dockerfile="ms_auth/Dockerfile"
 
 # Build
@@ -18,7 +18,7 @@ docker build . -t $imagename -f $dockerfile
 # Release
 docker stop $containername
 docker container rm $containername
-$dockerPorts="$dockerPortExposetoHost"+":"+"$dockerPortExposeInternalContainer"
+$dockerPorts="$containerPortExposetoHost"+":"+"$containerPortExposeInternal"
 docker run -d `
     -p $dockerPorts `
     --network $dockerNetworkWithDNSCommon `
@@ -27,7 +27,7 @@ docker run -d `
     $imagename
 
 
-$url="http://localhost:"+$dockerPortExposetoHost
+$url="http://localhost:"+$containerPortExposetoHost
 write-output $url
 
 # Read the final output from log container

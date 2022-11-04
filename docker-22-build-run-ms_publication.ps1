@@ -8,7 +8,7 @@
 # Local variables
 $containername="ms_publication"
 $imagename=$containername+":latest"
-$dockerPortExposetoHost=8002
+$containerPortExposetoHost=8002
 $dockerfile="ms_publication/Dockerfile"
 
 # Build
@@ -18,7 +18,7 @@ docker build . -t $imagename -f $dockerfile
 # Release
 docker stop $containername
 docker container rm $containername
-$dockerPorts="$dockerPortExposetoHost"+":"+"$dockerPortExposeInternalContainer"
+$dockerPorts="$containerPortExposetoHost"+":"+"$containerPortExposeInternal"
 docker run -d `
     -p $dockerPorts `
     --network $dockerNetworkWithDNSCommon `
@@ -26,7 +26,7 @@ docker run -d `
     --name $containername `
     $imagename
 
-$url="http://localhost:"+$dockerPortExposetoHost
+$url="http://localhost:"+$containerPortExposetoHost
 write-output $url
 
 # Read the final output from log container
