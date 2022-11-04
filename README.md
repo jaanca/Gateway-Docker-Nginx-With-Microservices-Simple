@@ -15,15 +15,18 @@
     |-- ms_auth/                                     # Microservice
     |   |-- Dockerfile                               # Instructions to build container
     |   |-- index.html                               # Simple web page
-    |-- ms_gateway                                   # Microservice
-    |   |-- includes/                                # Librerias/Clases/Funciones/Constantes/Mensajes de plataforma
-    |   |   |-- nginx_directives.conf                # Nginx Core & Proxy Directives
-    |   |-- default.conf                             # Nginx config
+    |-- ms_gateway/                                  # Microservice
+    |   |-- html/                                    # Files to expose on local web server, for example the global error pages
+    |   |-- webserver_config/                        # Nginx files to setup
+    |   |   |-- nginx_core.conf                      # /etc/nginx/nginx.conf
+    |   |   |-- nginx_directives.conf                # /etc/nginx/includes/directives.conf
+    |   |   |-- nginx_routes.conf                    # /etc/nginx/conf.d/default.conf
+    |   |-- Dockerfile                               # Instructions to build container and and place the nginx files instead in /etc
+    |   |-- index.html                               # Simple web page
+    |-- ms_publication/                              # Microservice
     |   |-- Dockerfile                               # Instructions to build container
     |   |-- index.html                               # Simple web page
-    |-- ms_publication                               # Microservice
-    |   |-- Dockerfile                               # Instructions to build container
-    |   |-- index.html                               # Simple web page
+    |-- Scripts_CICD_Linux/                          # The same powershell scripts but for linux
     |-- docker-00-variables.ps1                      # variables to be used in the powershell console
     |-- docker-01-create-network-for-dns-shared.ps1  # Create network for containers
     |-- docker-21-build-run-ms_auth.ps1.ps1          # Build image + Run Container + View the logs container for troubleshootings the nginx service
