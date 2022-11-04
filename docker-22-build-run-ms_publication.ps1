@@ -18,16 +18,17 @@ docker build . -t $imagename -f $dockerfile
 # Release
 docker stop $containername
 docker container rm $containername
-$dockerPorts="$containerPortExposetoHost"+":"+"$containerPortExposeInternal"
+$containerPorts="$containerPortExposetoHost"+":"+"$containerPortExposeInternal"
 docker run -d `
-    -p $dockerPorts `
+    -p $containerPorts `
     --network $dockerNetworkWithDNSCommon `
     --hostname $containername `
     --name $containername `
     $imagename
 
-$url="http://localhost:"+$containerPortExposetoHost
+$url="Exposed url: http://localhost:"+$containerPortExposetoHost
+write-output "############################################"
 write-output $url
-
+    
 # Read the final output from log container
 docker logs $containername --tail -1 --follow

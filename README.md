@@ -5,7 +5,7 @@
 - The code it's functional and testing in windows 10 x64 with Docker Desktop
 - The deployment process is done via basic ci/cd in powershell scripts
 - Each script for create container, show de logs for troubleshotting in case exist error in code or nginx server
-- Each container, have a tools for testing ping or browse web (curl) in case need that, this tools can erase in production deploy
+- Each container, have a tools for testing ping/dig or browse web (curl) in case need that, this tools can erase in production deploy
 
 # Descripción de los archivos
     .
@@ -43,10 +43,19 @@ Install Docker Desktop + WSL2
 ![Alt text](/docs/Software-Architecture/Context_and_infrastructure_Diagram.png?raw=true)
 
 # Create Virtual Network for Docker
+```console
+PS C:\..> .\docker-01-create-network-for-dns-shared.ps1
+```
 ![Alt text](/docs/photos/01.Create-Network/Screenshot_1.png?raw=true)
 ![Alt text](/docs/photos/01.Create-Network/Screenshot_2.png?raw=true)
 
 # Create Microservices examples and View Logs Container
+```console
+Execute script, read logs and Ctrl+C to Exit to continue with next one
+PS C:\..> .\docker-21-build-run-ms_auth.ps1
+PS C:\..> .\docker-22-build-run-ms_publication.ps1
+PS C:\..> .\docker-40-build-run-ms_gateway.ps1
+```
 ![Alt text](/docs/photos/02.Create-Microservice-View-Logs-Container/Screenshot_1.png?raw=true)
 ![Alt text](/docs/photos/02.Create-Microservice-View-Logs-Container/Screenshot_2.png?raw=true)
 ![Alt text](/docs/photos/02.Create-Microservice-View-Logs-Container/Screenshot_3.png?raw=true)
@@ -58,4 +67,22 @@ Install Docker Desktop + WSL2
 ![Alt text](/docs/photos/03.Test-Web-Browser/Screenshot_1.png?raw=true)
 ![Alt text](/docs/photos/03.Test-Web-Browser/Screenshot_2.png?raw=true)
 ![Alt text](/docs/photos/03.Test-Web-Browser/Screenshot_3.png?raw=true)
+
+# Try on Linux
+```console
+# Quit characters not linux, like \r 
+dos2unix *.sh
+chmod u+x *.sh
+# Create network
+./docker-01-create-network-for-dns-shared.sh
+# Create each microservices, view logs and exit with Ctrl+C to continue whith next one
+./docker-21-build-run-ms_auth.sh
+./docker-22-build-run-ms_publication.sh
+./docker-40-build-run-ms_gateway.sh
+```
+![Alt text](/docs/photos/04.Try-On-Linux/Screenshot_1.png?raw=true)
+![Alt text](/docs/photos/04.Try-On-Linux/Screenshot_2.png?raw=true)
+![Alt text](/docs/photos/04.Try-On-Linux/Screenshot_3.png?raw=true)
+![Alt text](/docs/photos/04.Try-On-Linux/Screenshot_4.png?raw=true)
+![Alt text](/docs/photos/04.Try-On-Linux/Screenshot_5.png?raw=true)
 
