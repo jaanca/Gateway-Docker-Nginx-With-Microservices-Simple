@@ -3,7 +3,7 @@
 - Using Nginx for create a gateway between microservices
 - The microservices are simple example web pages
 - The code it's functional and testing in windows 10 x64 with Docker Desktop
-- The deployment process is done via basic ci/cd in powershell scripts
+- The deployment process is done via basic ci/cd in powershell and linux scripts 
 - Each script for create container, show de logs for troubleshotting in case exist error in code or nginx server
 - Each container, have a tools for testing ping/dig or browse web (curl) in case need that, this tools can erase in production deploy
 
