@@ -1,6 +1,7 @@
 # Description
 
 - Using Nginx for create a gateway between microservices
+- This code it's simple gateway without redundant node for backends server or backend pools with load balancer for example round-robin, if your want this feature, please referer to urls(s): https://github.com/jaanca/Gateway-Docker-Nginx-With-Microservices-Simple-LB
 - The microservices are simple example web pages
 - The code it's functional and testing in windows 10 with Docker Desktop and Ubuntu 18.04 With docker engine
 - The deployment process is done via basic ci/cd in powershell and linux scripts 
