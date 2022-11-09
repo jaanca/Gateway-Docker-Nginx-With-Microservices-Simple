@@ -18,9 +18,9 @@
     |-- ms_gateway/                                  # Microservice
     |   |-- html/                                    # Files to expose on local web server, for example the global error pages
     |   |-- webserver_config/                        # Nginx files to setup
-    |   |   |-- nginx_core.conf                      # /etc/nginx/nginx.conf
-    |   |   |-- nginx_directives.conf                # /etc/nginx/includes/directives.conf
-    |   |   |-- nginx_routes.conf                    # /etc/nginx/conf.d/default.conf
+    |   |   |-- nginx_core.conf                      # File /etc/nginx/nginx.conf to define nginx core settings
+    |   |   |-- nginx_directives.conf                # File /etc/nginx/includes/directives.conf to define limits and other settings
+    |   |   |-- nginx_routes.conf                    # File /etc/nginx/conf.d/default.conf to define path from url to proxy_pass routing
     |   |-- Dockerfile                               # Instructions to build container and and place the nginx files instead in /etc
     |   |-- index.html                               # Simple web page
     |-- ms_publication/                              # Microservice
